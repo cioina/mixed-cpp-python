@@ -26,6 +26,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="cpython-windows\cpp_example.py" />
     <Compile Include="PythonApplication.py" />
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +38,9 @@
       <Project>{18fa7e0b-56f8-433d-abcc-523e412ffb83}</Project>
       <Private>True</Private>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="cpython-windows\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
