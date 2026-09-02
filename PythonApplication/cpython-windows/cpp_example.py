@@ -7,7 +7,6 @@ Provides some cpp functions
 # VS_OUTPUT_PATH = r"mixed-cpp-python\x64\Debug"
 # sys.path.append(VS_OUTPUT_PATH)
 import spam
-initialized = True
 
 def main():
     print(spam)
