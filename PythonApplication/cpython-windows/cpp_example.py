@@ -16,6 +16,7 @@ def main():
     print(spam.add(1,2))
     print(spam.inc(123))
     print(spam.say_hello("Alex"))
+    print(spam.div(1,1))
 
 
 if __name__ == '__main__':

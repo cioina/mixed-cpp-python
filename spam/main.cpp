@@ -19,7 +19,14 @@ static PyObject* method_add(PyObject* self, PyObject* args) {
     return PyLong_FromLong(a + b);
 };
 
+static PyObject* method_div(PyObject* self, PyObject* args) {
+    int a, b;
+    if (!PyArg_ParseTuple(args, "ii", &a, &b)) return NULL;
+    return PyLong_FromLong(a / b);
+};
+
 static PyMethodDef MyMethods[] = {
+    {"div", (PyCFunction)method_div, METH_VARARGS, "Divide two numbers."},
     {"add", (PyCFunction)method_add, METH_VARARGS, "Add two numbers."},
     {"inc",(PyCFunction)method_inc, METH_VARARGS, "Plus one."},
     {"say_hello", (PyCFunction)method_say_hello, METH_VARARGS, "Greet someone."},

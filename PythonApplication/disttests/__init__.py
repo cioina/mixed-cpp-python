@@ -17,6 +17,7 @@ class TestPythonInterpreter(unittest.TestCase):
     def test_all_spam_methods(self):
         import spam
         assert spam is not None
+        self.assertEqual(2, spam.div(6,3))
         self.assertEqual(-3, spam.add(-1,-2))
         # Returns 9223372036854775807 on 64-bit systems
         MAX_INT64 = sys.maxsize 
@@ -33,7 +34,6 @@ class TestPythonInterpreter(unittest.TestCase):
         with self.assertRaises(TypeError):
             import spam
             spam.inc(0.0)
-
  
     def test_compression(self):
         import bz2
