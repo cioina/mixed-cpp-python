@@ -16,13 +16,25 @@ from typing import Optional
 class TestPythonInterpreter(unittest.TestCase):
     def test_all_spam_methods(self):
         import spam
+        assert spam is not None
         self.assertEqual(-3, spam.add(-1,-2))
         # Returns 9223372036854775807 on 64-bit systems
         MAX_INT64 = sys.maxsize 
-        self.assertEqual(MAX_INT64, spam.inc(MAX_INT64-1))
+        self.assertEqual(MAX_INT64, spam.inc(MAX_INT64 - 1))
         self.assertEqual("Hello, Alex!", spam.say_hello("Alex"))
 
+    def test_no_overflow_from_spam(self):
+       import spam
+       MAX_INT64 = sys.maxsize 
+       spam.inc(MAX_INT64)
+       self.assertEqual(-MAX_INT64 -1, spam.inc(MAX_INT64))
 
+    def test_type_from_spam(self):
+        with self.assertRaises(TypeError) as context:
+            import spam
+            spam.inc(0.0)
+
+ 
     def test_compression(self):
         import bz2
         import lzma
