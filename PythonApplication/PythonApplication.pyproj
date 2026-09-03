@@ -16,6 +16,9 @@
     <EnableNativeCodeDebugging>True</EnableNativeCodeDebugging>
     <InterpreterArguments>-i</InterpreterArguments>
     <IsWindowsApplication>False</IsWindowsApplication>
+    <TestFramework>unittest</TestFramework>
+    <UnitTestPattern>test*.py</UnitTestPattern>
+    <UnitTestRootDirectory>.</UnitTestRootDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,6 +30,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="cpython-windows\cpp_example.py" />
+    <Compile Include="disttests\__init__.py" />
     <Compile Include="PythonApplication.py" />
   </ItemGroup>
   <ItemGroup>
@@ -41,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="cpython-windows\" />
+    <Folder Include="disttests\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

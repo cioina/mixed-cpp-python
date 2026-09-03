@@ -27,7 +27,7 @@ def run():
         make_dir = ROOT / "cpython-unix"
         os.chdir(make_dir)
         return os.execve(python, args, env)
-    elif system == "Windows":
+    elif system == "Windows" and sys.version_info[:2] == (3, 14):
         args = [
             python,
             "cpp_example.py",
