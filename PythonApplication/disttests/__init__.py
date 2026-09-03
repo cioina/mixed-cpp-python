@@ -14,6 +14,13 @@ from typing import Optional
 
 
 class TestPythonInterpreter(unittest.TestCase):
+    def test_all_spam_methods(self):
+        import spam
+        self.assertEqual(-3, spam.add(-1,-2))
+        self.assertEqual(124, spam.inc(123))
+        self.assertEqual("Hello, Alex!", spam.say_hello("Alex"))
+
+
     def test_compression(self):
         import bz2
         import lzma
