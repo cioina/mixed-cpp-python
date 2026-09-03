@@ -17,7 +17,8 @@ class TestPythonInterpreter(unittest.TestCase):
     def test_all_spam_methods(self):
         import spam
         self.assertEqual(-3, spam.add(-1,-2))
-        self.assertEqual(124, spam.inc(123))
+        self.assertEqual(9223372036854775807, spam.inc(9223372036854775806))
+        # self.assertEqual(9223372036854775808, spam.inc(9223372036854775807))
         self.assertEqual("Hello, Alex!", spam.say_hello("Alex"))
 
 
