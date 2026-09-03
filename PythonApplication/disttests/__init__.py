@@ -17,8 +17,9 @@ class TestPythonInterpreter(unittest.TestCase):
     def test_all_spam_methods(self):
         import spam
         self.assertEqual(-3, spam.add(-1,-2))
-        self.assertEqual(9223372036854775807, spam.inc(9223372036854775806))
-        # self.assertEqual(9223372036854775808, spam.inc(9223372036854775807))
+        # Returns 9223372036854775807 on 64-bit systems
+        MAX_INT64 = sys.maxsize 
+        self.assertEqual(MAX_INT64, spam.inc(MAX_INT64-1))
         self.assertEqual("Hello, Alex!", spam.say_hello("Alex"))
 
 
