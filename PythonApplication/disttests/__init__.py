@@ -30,7 +30,7 @@ class TestPythonInterpreter(unittest.TestCase):
        self.assertEqual(-MAX_INT64 -1, spam.inc(MAX_INT64))
 
     def test_type_from_spam(self):
-        with self.assertRaises(TypeError) as context:
+        with self.assertRaises(TypeError):
             import spam
             spam.inc(0.0)
 

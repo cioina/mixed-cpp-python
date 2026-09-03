@@ -38,6 +38,7 @@ def run():
         # print(args)
         # print(cwd)
         # print(env)
+        # print(python)
 
         return subprocess.run(args, cwd=cwd, env=env, check=True, bufsize=0)
     else:
