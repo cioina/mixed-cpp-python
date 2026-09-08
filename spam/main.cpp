@@ -46,7 +46,7 @@ static PyObject* method_add(PyObject* self, PyObject* args) {
 };
 
 static PyObject* method_div(PyObject* self, PyObject* args) {
-    int a, b, res;
+    int a, b;
     if (!PyArg_ParseTuple(args, "ii", &a, &b)) return nullptr;
 
     try {
