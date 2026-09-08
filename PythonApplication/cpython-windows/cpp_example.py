@@ -10,8 +10,8 @@ import spam
 
 def main():
     # print(spam)
-    print("Module path:", getattr(spam, '__file__', 'Unknown (Built-in/Namespace)'))
-    print("Available names:", dir(spam))
+    # print("Module path:", getattr(spam, '__file__', 'Unknown (Built-in/Namespace)'))
+    # print("Available names:", dir(spam))
 
     print(spam.add(1,2))
     print(spam.inc(123))
