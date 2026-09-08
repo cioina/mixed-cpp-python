@@ -9,13 +9,14 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import spam
+
 from pathlib import Path
 from typing import Optional
 
 
 class TestPythonInterpreter(unittest.TestCase):
     def test_all_spam_methods(self):
-        import spam
         assert spam is not None
         self.assertEqual(2, spam.div(6,3))
         self.assertEqual(-3, spam.add(-1,-2))
@@ -23,17 +24,20 @@ class TestPythonInterpreter(unittest.TestCase):
         MAX_INT64 = sys.maxsize 
         self.assertEqual(MAX_INT64, spam.inc(MAX_INT64 - 1))
         self.assertEqual("Hello, Alex!", spam.say_hello("Alex"))
+        self.assertEqual(True, spam.is_positive(1))
 
     def test_no_overflow_from_spam(self):
-       import spam
        MAX_INT64 = sys.maxsize 
        spam.inc(MAX_INT64)
-       self.assertEqual(-MAX_INT64 -1, spam.inc(MAX_INT64))
+       self.assertEqual(-MAX_INT64 - 1, spam.inc(MAX_INT64))
 
     def test_type_from_spam(self):
         with self.assertRaises(TypeError):
-            import spam
             spam.inc(0.0)
+
+    def test_custom_error_from_spam(self):
+        with self.assertRaises(spam.CustomError):
+            spam.div(1, 0)
  
     def test_compression(self):
         import bz2
