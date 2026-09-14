@@ -68,16 +68,6 @@ static long long strtolonglong(char *, bool&);
 static void testConversion();
 static void printNumber(char *);
 
-//int main(void)
-//{
-//	//ifstream file("./input.txt", ios::in | ios::binary | ios::ate);
-//	//evaluateExpressionsFromFile(file);
-//	 testConversion();
-//	cin.get();
-//
-//	return 0;
-//}
-//-----------------------------------------------------------------------------------------------
 static void printNumber(char * n)
 {
 	bool isError;
