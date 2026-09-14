@@ -1,5 +1,6 @@
 #include <Python.h>
 #include <stdexcept>
+#include "exprEval.cpp"
 
 // Global pointer for your custom exception
 static PyObject* CustomError = nullptr;
@@ -12,6 +13,7 @@ static PyObject* method_isPositive(PyObject* self, PyObject* args) {
     }
 
     try {
+        //testConversion();
         if (value < 0) {
             // Throw a C++ exception or handle logic directly
             throw std::runtime_error("Value cannot be negative!");
@@ -22,6 +24,8 @@ static PyObject* method_isPositive(PyObject* self, PyObject* args) {
         PyErr_SetString(CustomError, e.what());
         return nullptr; // Returning NULL signals an error indicator to Python
     }
+
+   
 
     return PyBool_FromLong(1);
 }

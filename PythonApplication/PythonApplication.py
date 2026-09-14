@@ -8,6 +8,7 @@ import pathlib
 import platform
 import subprocess
 import sys
+# import spam
 
 ROOT = pathlib.Path(os.path.abspath(__file__)).parent
 
@@ -40,6 +41,7 @@ def run():
         # print(env)
 
         return subprocess.run(args, cwd=cwd, env=env, check=True, bufsize=0)
+        # print(spam.is_positive(1))
     else:
         raise Exception(f"Unsupported host system: {system}")
 
