@@ -31,7 +31,7 @@ def run():
     elif system == "Windows" and sys.version_info[:2] == (3, 14):
         args = [
             python,
-            "cpp_example.py",
+            "test_numpy.py",
             *sys.argv[1:],
         ]
         cwd = str(ROOT / "cpython-windows")
@@ -42,6 +42,15 @@ def run():
 
         return subprocess.run(args, cwd=cwd, env=env, check=True, bufsize=0)
         # print(spam.is_positive(1))
+
+        # # https://github.com/numpy/numpy/issues
+        # import numpy as np
+        # print(np.__version__)
+        # # print(np.__all__)
+        # print(np.pi)
+        # print(np.e)
+        # print(np.cos(np.array([np.pi/2,np.radians(90)])))
+        # print(np.max(np.array([1,2,3,4])))
     else:
         raise Exception(f"Unsupported host system: {system}")
 

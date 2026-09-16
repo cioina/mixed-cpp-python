@@ -30,6 +30,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="cpython-windows\cpp_example.py" />
+    <Compile Include="cpython-windows\test_numpy.py" />
     <Compile Include="disttests\__init__.py" />
     <Compile Include="PythonApplication.py" />
   </ItemGroup>
