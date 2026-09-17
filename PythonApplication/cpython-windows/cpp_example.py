@@ -17,7 +17,6 @@ def main():
     print(spam.inc(123))
     print(spam.say_hello("Alex"))
     print(spam.div(1,1))
-    print(spam.is_positive(1))
     try:
         spam.div(1, 0)
     except spam.CustomError as e:

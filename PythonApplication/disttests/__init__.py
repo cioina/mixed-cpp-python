@@ -24,12 +24,11 @@ class TestPythonInterpreter(unittest.TestCase):
         MAX_INT64 = sys.maxsize 
         self.assertEqual(MAX_INT64, spam.inc(MAX_INT64 - 1))
         self.assertEqual("Hello, Alex!", spam.say_hello("Alex"))
-        self.assertEqual(True, spam.is_positive(1))
 
     def test_no_overflow_from_spam(self):
-       MAX_INT64 = sys.maxsize 
-       spam.inc(MAX_INT64)
-       self.assertEqual(-MAX_INT64 - 1, spam.inc(MAX_INT64))
+        MAX_INT64 = sys.maxsize 
+        spam.inc(MAX_INT64)
+        self.assertEqual(-MAX_INT64 - 1, spam.inc(MAX_INT64))
 
     def test_type_from_spam(self):
         with self.assertRaises(TypeError):

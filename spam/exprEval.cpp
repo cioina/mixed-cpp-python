@@ -1157,7 +1157,7 @@ static void traverseQueue(Expression *&head, char* postfixNotation)
 //----------------------------------------------------------------------------------
 static long long compute(char c, long long a, long long b)
 {
-	long long result;
+	long long result = NULL;
 	switch (c)
 	{
 	case '+':	result = a + b;
