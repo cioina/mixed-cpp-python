@@ -13,7 +13,7 @@ static PyObject* method_isPositive(PyObject* self, PyObject* args) {
     }
 
     try {
-        //testConversion();
+        testConversion();
         if (value < 0) {
             // Throw a C++ exception or handle logic directly
             throw std::runtime_error("Value cannot be negative!");

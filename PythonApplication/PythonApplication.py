@@ -8,7 +8,7 @@ import pathlib
 import platform
 import subprocess
 import sys
-# import spam
+import spam
 
 ROOT = pathlib.Path(os.path.abspath(__file__)).parent
 
@@ -40,8 +40,8 @@ def run():
         # print(cwd)
         # print(env)
 
-        return subprocess.run(args, cwd=cwd, env=env, check=True, bufsize=0)
-        # print(spam.is_positive(1))
+        # return subprocess.run(args, cwd=cwd, env=env, check=True, bufsize=0)
+        print(spam.is_positive(1))
 
         # # https://github.com/numpy/numpy/issues
         # import numpy as np
