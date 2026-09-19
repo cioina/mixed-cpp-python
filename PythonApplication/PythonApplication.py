@@ -41,6 +41,7 @@ def run():
         # print(env)
 
         # return subprocess.run(args, cwd=cwd, env=env, check=True, bufsize=0)
+
         TEST_EXAMPLES = str(pathlib.Path(os.path.abspath(__file__)).parent.parent / "spam" / "input.txt")
         print(spam.test_conversion(TEST_EXAMPLES))
 
