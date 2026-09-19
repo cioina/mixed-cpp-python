@@ -5,27 +5,18 @@
 // Global pointer for your custom exception
 static PyObject* CustomError = nullptr;
 
-static PyObject* method_isPositive(PyObject* self, PyObject* args) {
-    int value = 0;
-
-    if (!PyArg_ParseTuple(args, "i", &value)) {
-        return nullptr; // Argument parsing failed, Python exception already set
-    }
+static PyObject* method_testConversion(PyObject* self, PyObject* args) {
+    char* testPath;
+    if (!PyArg_ParseTuple(args, "s", &testPath)) return nullptr;
 
     try {
-        testConversion();
-        if (value < 0) {
-            // Throw a C++ exception or handle logic directly
-            throw std::runtime_error("Value cannot be negative!");
-        }
+        testConversion(testPath);
     }
     catch (const std::exception& e) {
         // Raise the custom Python exception with a message
         PyErr_SetString(CustomError, e.what());
         return nullptr; // Returning NULL signals an error indicator to Python
     }
-
-   
 
     return PyBool_FromLong(1);
 }
@@ -73,7 +64,7 @@ static PyMethodDef MyMethods[] = {
     {"add", (PyCFunction)method_add, METH_VARARGS, "Add two numbers."},
     {"inc",(PyCFunction)method_inc, METH_VARARGS, "Plus one."},
     {"say_hello", (PyCFunction)method_say_hello, METH_VARARGS, "Greet someone."},
-    {"is_positive", (PyCFunction)method_isPositive, METH_VARARGS, "Test positive."},
+    {"test_conversion", (PyCFunction)method_testConversion, METH_VARARGS, "Test math expressions."},
     {nullptr, nullptr, 0, nullptr}  // Sentinel / Terminator
 };
 

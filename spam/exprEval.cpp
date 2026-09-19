@@ -65,7 +65,7 @@ static Expression* FindGreater(Expression *&, char *);
 static Expression* addDoublyLinkedNode(Expression*&, char *);
 
 static long long strtolonglong(char *, bool&);
-static void testConversion();
+static void testConversion(char *);
 static void printNumber(char *);
 
 static void printNumber(char * n)
@@ -76,9 +76,9 @@ static void printNumber(char * n)
 	cout << endl << n << endl;
 	cout << value << endl;
 }
-static void testConversion()
+static void testConversion(char * filePath)
 {
-    ifstream file("C:\\Users\\alex\\source\\repos\\cioina\\python\\mixed-cpp-python\\spam\\input.txt", ios::in | ios::binary | ios::ate);
+    ifstream file(filePath, ios::in | ios::binary | ios::ate);
 	evaluateExpressionsFromFile(file);
 }
 /*
