@@ -19,7 +19,12 @@ def main():
     # test triggering the import of the package
     np.ndarray
 
+    print(np.__version__)
+    # print(np.__all__)
     print(np.pi)
+    print(np.e)
+    print(np.cos(np.array([np.pi/2,np.radians(90)])))
+    print(np.max(np.array([1,2,3,4])))
     
 if __name__ == '__main__':
     main()
